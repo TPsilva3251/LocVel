@@ -1,6 +1,9 @@
 <div>
-    
-    <h1 class="text-3xl font-bold underline">
-        Categories!
-      </h1>
+    {{-- Titulo da página --}}
+    <title>LocVel - Categorias</title>
+    {{--  --}}
+    <div class="">
+        <a href="/">Inicio</a>
+    </div>
+    @include('livewire.Categories.create')
 </div>
