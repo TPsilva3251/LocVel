@@ -6,13 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>LocVel - Inicio</title>
     @livewireStyles
+    @extends('layouts.app')
 </head>
 <body>
-    <div>
-        <a href="#">Categorias</a>
-        <a href="">Marcas</a>
-        <a href="">Carros</a>
-    </div>
+    
+    
     @livewireScripts
 </body>
 </html>
