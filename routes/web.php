@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Categories;
+use App\Http\Livewire\Home;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', Home::class);
 
-Route::get('/categories', Categories::class);
+Route::get('/categories', Categories::class)->name('categories.index');
