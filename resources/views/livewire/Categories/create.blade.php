@@ -25,6 +25,12 @@
                   "
                         placeholder="Categoria" wire:model="categoria" />
                 </div>
+                {{-- Seção de erro --}}
+                <div class="bg-red-500 text-white text-center rounded-md mb-1">
+                    @error('categoria')
+                        {{ $message }}
+                    @enderror
+                </div>
                 <button
                     class="border border-solid border-green-600 bg-green-600 hover:bg-green-700 text-white rounded-md p-1 hover:p-2"
                     wire:click.prevent="store()">Salvar</button>
@@ -32,5 +38,13 @@
                     class="border border-solid border-red-600 bg-red-600 hover:bg-red-700 text-white rounded-md p-1 hover:p-2 mt-2">Cacelar</button>
             </div>
         </div>
+         {{-- Seção de sucesso --}}
+    @if (session()->has('message'))
+    <div class=" text-white text-center bg-green-500">
+        {{ session('message') }}
+    </div>
+@endif
+{{--  --}}
     </form>
+   
 </div>
