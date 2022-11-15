@@ -11,12 +11,37 @@ class Categories extends Component
    
     public function render()
     {
-        return view('livewire.categories');
+        $categorias = Category::paginate(6);
+        return view('livewire.categories', compact('categorias'));
+    }
+
+    // Validação
+
+    protected $rules = [
+        'categoria' => 'required|min:3|max:256',
+    ];
+
+    protected $messages = [
+        'categoria.required' => 'Você deve colocar o nome da Categoria!',
+        'categoria.min' => 'Tamanho mínimo 3 digitos!',
+        'categoria.max' => 'Tamanho máximo 256 digitos!',
+    ];
+
+    public function resetfields()
+    {
+        $categoria = '';
     }
 
     public function store()
     {
-        $name = $this->categoria;
-        // faltar rodar migration para salvar
+        $this->validate();
+
+        Category::create([
+            'name' => $this->categoria
+        ]);  
+
+        $this->resetfields();
+
+        session()->flash('message', 'Registro criado com sucesso!');
     }
 }
