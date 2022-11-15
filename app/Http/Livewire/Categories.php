@@ -4,15 +4,23 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Category;
+use Livewire\WithPagination;
 
 class Categories extends Component
 {
+    use WithPagination;
+
+    // protected $paginationTheme = 'bootstrap';
+    
     public $categoria;
+    public $update = false;
    
     public function render()
     {
-        $categorias = Category::paginate(6);
-        return view('livewire.categories', compact('categorias'));
+        $categorias = Category::get();
+        return view('livewire.categories', [
+            'categorias' =>Category::paginate(6),
+        ]);
     }
 
     // Validação
@@ -30,6 +38,7 @@ class Categories extends Component
     public function resetfields()
     {
         $categoria = '';
+        $update = false;
     }
 
     public function store()
@@ -43,5 +52,11 @@ class Categories extends Component
         $this->resetfields();
 
         session()->flash('message', 'Registro criado com sucesso!');
+    }
+
+    public function edit($id)
+    {
+        $this->update = true;
+        dd($this->update, $id);
     }
 }
