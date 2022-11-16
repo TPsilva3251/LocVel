@@ -12,14 +12,14 @@ class Categories extends Component
 
     // protected $paginationTheme = 'bootstrap';
     
-    public $categoria;
+    public $categoria, $categoriaid;
     public $update = false;
    
     public function render()
     {
         $categorias = Category::get();
         return view('livewire.categories', [
-            'categorias' =>Category::paginate(6),
+            'categorias' =>Category::paginate(4),
         ]);
     }
 
@@ -37,8 +37,9 @@ class Categories extends Component
 
     public function resetfields()
     {
-        $categoria = '';
-        $update = false;
+        $this->categoria = '';
+        $this->categoriaid ='';
+        $this->update = false;
     }
 
     public function store()
@@ -56,7 +57,29 @@ class Categories extends Component
 
     public function edit($id)
     {
+        $category = Category::findOrFail($id);
+        $this->categoria = $category->name;
+        $this->categoriaid = $category->id;
         $this->update = true;
-        dd($this->update, $id);
+    }
+
+    public function update($id)
+    {        
+        $this->validate();
+
+        Category::find($id)->fill([
+            'name' => $this->categoria
+        ])->save();
+        
+        $this->resetfields();
+
+        session()->flash('message', 'Registro alterado com sucesso!');
+    }
+
+    public function delete($id)
+    {
+        Category::find($id)->delete();
+
+        session()->flash('message', 'Registro excluído com sucesso!');
     }
 }
