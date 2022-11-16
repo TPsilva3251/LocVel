@@ -13,7 +13,7 @@
 
                 <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
 
-                <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Modelos</a>
+                <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
 
                 <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
                 <hr>
@@ -27,7 +27,7 @@
 
                 <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
 
-                <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Modelos</a>
+                <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
 
                 <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
 
