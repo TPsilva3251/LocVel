@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.laravue {
+    background: black;
+}
+
+@layer components{
+    .btn-green {
+        @apply border border-solid border-green-600 bg-green-600  text-white rounded-md p-1 
+    }
+
+    .btn-red{
+        @apply border border-solid border-red-600 bg-red-600  text-white rounded-md p-1 
+    }
+
+    .btn-yellow{
+        @apply border border-solid border-yellow-400 bg-yellow-400  text-black rounded-md p-1 
+    }
+}
