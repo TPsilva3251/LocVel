@@ -2,5 +2,5 @@
     {{-- Título da página --}}
     <title>LocVel - Inicio</title>
     {{--  --}}
-    @include('base')
+    @include('livewire.navbar')
 </div>
