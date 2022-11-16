@@ -35,16 +35,9 @@
                     class="border border-solid border-green-600 bg-green-600 hover:bg-green-700 text-white rounded-md p-1 hover:p-2"
                     wire:click.prevent="store()">Salvar</button>
                 <button
-                    class="border border-solid border-red-600 bg-red-600 hover:bg-red-700 text-white rounded-md p-1 hover:p-2 mt-2">Cacelar</button>
+                    class="border border-solid border-red-600 bg-red-600 hover:bg-red-700 text-white rounded-md p-1 hover:p-2 mt-2"
+                    wire:click.prevent="resetfields()">Limpar</button>
             </div>
         </div>
-         {{-- Seção de sucesso --}}
-    @if (session()->has('message'))
-    <div class=" text-white text-center bg-green-500">
-        {{ session('message') }}
-    </div>
-@endif
-{{--  --}}
     </form>
-   
 </div>

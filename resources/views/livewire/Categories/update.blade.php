@@ -1,5 +1,6 @@
 <div>
     <form>
+        <input type="hideen" {{ $categoriaid }}>
         <div class="flex flex-col justify-center items-center">
             <div class="grid grid-cols-1 gap-1">
                 <div class="mb-3 xl:w-96">
@@ -33,19 +34,11 @@
                 </div>
                 <button
                     class="border border-solid border-green-600 bg-green-600 hover:bg-green-700 text-white rounded-md p-1 hover:p-2"
-                    wire:click.prevent="store()">Alterar</button>
+                    wire:click.prevent="update({{ $categoriaid }})">Alterar</button>
                 <button
                     class="border border-solid border-red-600 bg-red-600 hover:bg-red-700 text-white rounded-md p-1 hover:p-2 mt-2"
-                    wire:click.prevent='resetfields()'>Cacelar</button>
+                    wire:click.prevent="resetfields()">Cacelar</button>
             </div>
         </div>
-         {{-- Seção de sucesso --}}
-    @if (session()->has('message'))
-    <div class=" text-white text-center bg-green-500">
-        {{ session('message') }}
-    </div>
-@endif
-{{--  --}}
     </form>
-   
 </div>
