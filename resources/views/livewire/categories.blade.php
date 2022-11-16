@@ -11,8 +11,14 @@
     @else
         @include('livewire.Categories.create')
     @endif
-
-
+    <br>
+    {{-- Seção de sucesso --}}
+    @if (session()->has('message'))
+        <div class=" text-white text-center bg-green-500 w-96  mx-auto rounded-md border-solid border-2 border-green-600">
+            {{ session('message') }}
+        </div>
+    @endif
+    {{--  --}}
     <div class="flex flex-col justify-center items-center">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="py-2 inline-block min-w-full sm:px-6 lg:px-8">
@@ -39,7 +45,8 @@
                                             class="text-black bg-yellow-400 px-3 py-1 mx-1 border-solid border-yellow-400 rounded-md hover:bg-yellow-500"
                                             wire:click.prevent='edit({{ $categoria->id }})'>Editar</button>
                                         <button
-                                            class="text-white bg-red-600 px-3 py-1 mx-1 border-solid border-red-600 rounded-md hover:bg-red-700">Excluir</button>
+                                            class="text-white bg-red-600 px-3 py-1 mx-1 border-solid border-red-600 rounded-md hover:bg-red-700"
+                                            wire:click.prevent='delete({{ $categoria->id }})'>Excluir</button>
                                     </td>
                                 </tr>
                             @endforeach
