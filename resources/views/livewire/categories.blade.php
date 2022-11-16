@@ -42,10 +42,10 @@
                                     </td>
                                     <td class="text-sm text-center text-gray-900  px-6 py-4 whitespace-nowrap">
                                         <button
-                                            class="text-black bg-yellow-400 px-3 py-1 mx-1 border-solid border-yellow-400 rounded-md hover:bg-yellow-500"
+                                            class="btn-yellow px-3 py-1 mx-1 border-solid border-yellow-400 rounded-md hover:bg-yellow-500"
                                             wire:click.prevent='edit({{ $categoria->id }})'>Editar</button>
                                         <button
-                                            class="text-white bg-red-600 px-3 py-1 mx-1 border-solid border-red-600 rounded-md hover:bg-red-700"
+                                            class="btn-red px-3 py-1 mx-1 border-solid border-red-600 rounded-md hover:bg-red-700"
                                             wire:click.prevent='delete({{ $categoria->id }})'>Excluir</button>
                                     </td>
                                 </tr>
