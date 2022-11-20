@@ -1,6 +1,5 @@
 <div>
     <form>
-        <input type="hideen" {{ $categoriaid }}>
         <div class="flex flex-col justify-center items-center">
             <div class="grid grid-cols-1 gap-1">
                 <div class="mb-3 xl:w-96">
