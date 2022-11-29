@@ -3,35 +3,42 @@
         <nav class="flex h-9 items-center justify-between" aria-label="Global">
             <div class="flex lg:min-w-0 " aria-label="Global">
                 <a href="/" class="-m-1.5 p-1.5">
-                    <span class="sr-only">Your Company</span>
                     <img class="h-8" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
                         alt="">
                 </a>
             </div>
-            <div class="h-4 grid grid-cols-1 gap-y-3 md:hidden">
-                <a href="/categories" class="font-semibold text-gray-900 hover:text-gray-900">Categorias</a>
-
-                <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
-
-                <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
-
-                <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
-                <hr>
-                <a href="#"
-                    class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log
-                    in</a>
-            </div>
-
-            <div class="hidden md:flex md:min-w-0  md:justify-center md:gap-x-12">
-                <a href="/categories" class="font-semibold text-gray-900 hover:text-gray-900">Categorias</a>
-
-                <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
-
-                <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
-
-                <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
-
-            </div>
+            @if (isset(Auth::user()->name))
+                {{-- @if ($rule->id == 1) --}}
+                <div class="h-4 grid grid-cols-1 gap-y-3 md:hidden">
+                    <a href="/categories" class="font-semibold text-gray-900 hover:text-gray-900">Categorias</a>
+    
+                    <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
+    
+                    <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
+    
+                    <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
+                    <hr>
+                    <a href="#"
+                        class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log
+                        in</a>
+                </div>
+    
+                <div class="hidden md:flex md:min-w-0  md:justify-center md:gap-x-12">
+                    <a href="/categories" class="font-semibold text-gray-900 hover:text-gray-900">Categorias</a>
+    
+                    <a href="/cars" class="font-semibold text-gray-900 hover:text-gray-900">Carros</a>
+    
+                    <a href="/manufacturers" class="font-semibold text-gray-900 hover:text-gray-900">Fabricantes</a>
+    
+                    <a href="#" class="font-semibold text-gray-900 hover:text-gray-900">Lojas</a>
+    
+                </div>
+                {{-- @else
+                <h1>Sem permissão!</h1>
+                @endif --}}
+            @else
+                <h1>Sem login!</h1>
+            @endif
             {{-- <div class="hidden md:flex md:min-w-0  md:justify-end">
                 <a href="#"
                     class="inline-block rounded-lg px-3 py-1.5 text-sm font-semibold leading-6 text-gray-900 shadow-sm ring-1 ring-gray-900/10 hover:ring-gray-900/20">Log
@@ -50,6 +57,7 @@
                                 <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none transition">
                                     @if (isset(Auth::user()->name ))
                                     {{ Auth::user()->name }}
+                                    
                                     @endif
                                    
                                     {{-- <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
